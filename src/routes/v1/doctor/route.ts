@@ -62,6 +62,24 @@ doctorRoute.post('/login/', async(req: Request, res: Response) => {
   }
 })
 
+doctorRoute.get('/:id/', async(req: Request, res: Response) => {
+  try {
+
+    const result: any = await doctorController.getDoctor(req.params.id)
+    
+    return res.json({
+      success: TRUE,
+      message: TRUEMSG,
+      result: result
+    })
+  } catch (error) {
+    res.json({
+      success: FALSE,
+      message: error
+    })
+  }
+})
+
 doctorRoute.put('/:id/', async(req: Request, res: Response) => {
   try {
 

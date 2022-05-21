@@ -105,8 +105,18 @@ export class DoctorController {
 
   }
 
-  async getDoctor() {
+  async getDoctor(id) {
+    try {
 
+      const doctor: any = await DoctorModel.findOne({ _id: id }).select(['-__v', '-createdAt', '-updatedAt'])
+
+      if(!doctor) return Promise.reject("Could not find doctor")
+
+      return Promise.resolve(doctor)
+      
+    } catch (error) {
+      return Promise.reject(error)
+    }
   }
 
 }

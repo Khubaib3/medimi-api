@@ -78,7 +78,7 @@ const doctorSchema = new Schema(
       required: false
     },
     phoneNumber: {
-      type: String,
+      type: Number,
       required: true,
       unique: true
     },
@@ -109,7 +109,7 @@ const doctorSchema = new Schema(
       required: false
     },
     // END == Medical Profile
-    // START == Images URLs 
+    // START == Images URLs
     imageURL: {
       type: String,
       required: false
