@@ -74,7 +74,7 @@ const doctorSchema = new Schema(
       required: false
     },
     dob: {
-      type: Number,
+      type: String,
       required: false
     },
     phoneNumber: {

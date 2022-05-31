@@ -88,9 +88,7 @@ export class DoctorController {
 
       if(!doctor) return Promise.reject("Could not update doctor")
 
-      const finalDoc: any = await DoctorModel.findOne({ _id: id }).select(['-__v', '-createdAt', '-updatedAt'])
-
-      return Promise.resolve(finalDoc)
+      return Promise.resolve('Doctor Updated Successfully!')
       
     } catch (error) {
       return error

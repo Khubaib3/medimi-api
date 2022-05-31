@@ -90,6 +90,7 @@ doctorRoute.put('/:id/', async(req: Request, res: Response) => {
       message: TRUEMSG,
       result: result
     })
+    
   } catch (error) {
     res.json({
       success: FALSE,
